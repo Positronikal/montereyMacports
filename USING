@@ -1,0 +1,40 @@
+montereyMacports Installation Guide
+Copyright (c) 2021 Hoyt Harness, Positronikal
+See the end of the file for copying permissions.
+
+
+BASIC INSTALLATION
+
+These shell utilities work on Macintosh macOS 12 Monterey to automate
+some administration of the MacPorts package manager.
+
+Unzip the montereyMacports download or navigate to the cloned
+directory, depending on how you obtained the files from Github. Copy
+either the install or upgrade script, since you only need one or the
+other, to the directory on your Mac from which you intend to run it.
+You will need to use sudo, so run either:
+
+$ sudo macports_monterey_install.sh
+
+...or if you already have a version of MacPorts for a previous macOS
+version...
+
+$ sudo macports_monterey_upgrade.sh
+
+Once either completes, you'll have a ~/bin/MapPorts directory with an
+update utility in the ~/bin directory. This directory will also be
+added to your path envar and it can be called from the terminal using
+sudo from that point.
+
+COPYING PERMISSIONS
+
+Permission is granted to anyone to make or distribute verbatim copies
+of this document as received, in any medium, provided that the
+copyright notice and permission notice are preserved, and that the
+distributor grants the recipient permission for further redistribution
+as permitted by this notice.
+
+Permission is granted to distribute modified versions of this document,
+or of portions of it, under the above conditions, provided also that
+they carry prominent notices stating who last changed them.
+
