@@ -98,12 +98,10 @@ if [ ! -e macports_updater.sh ]; then
     echo >> macports_updater.sh >> macports_updater.sh
     echo "sudo port -v selfupdate" >> macports_updater.sh
     echo "sudo port upgrade outdated" >> macports_updater.sh
-	echo "sudo port uninstall inactive" >> macports_updater.sh
+    echo "sudo port uninstall inactive" >> macports_updater.sh
     echo "sudo port uninstall rleaves" >> macports_updater.sh
     echo >> macports_updater.sh
     echo "exit" >> macports_updater.sh
-    echo "sudo port uninstall inactive" >> macports_updater.sh
-    echo "sudo port uninstall rleaves" >> macports_updater.sh
     echo "MacPorts update script created. Run macports_updater.sh as root from terminal."
 else
     echo "MacPorts update script already exists. Run macports_updater.sh as root from terminal."
