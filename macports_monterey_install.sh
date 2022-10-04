@@ -43,8 +43,8 @@ echo "Done."
 # Reinstall MacPorts base system:
 echo "Installing the MacPorts base system for Monterey..."
 curl --location --remote-name \
-	https://github.com/macports/macports-base/releases/download/v2.7.1/\
-		MacPorts-2.7.1-12-Monterey.pkg
+    https://github.com/macports/macports-base/releases/download/v2.7.1/\
+        MacPorts-2.7.1-12-Monterey.pkg
 sudo installer -pkg MacPorts-2.7.1-12-Monterey.pkg -target /
 echo "Done."
 
@@ -59,7 +59,7 @@ echo "Done."
 # Install your Monterey ports:
 echo "Installing your Monterey ports"
 curl --location --remote-name https://github.com/macports/macports-contrib/\
-	raw/master/restore_ports/restore_ports.tcl
+    raw/master/restore_ports/restore_ports.tcl
 chmod +x restore_ports.tcl
 xattr -d com.apple.quarantine restore_ports.tcl
 sudo ./restore_ports.tcl myports.txt
@@ -70,39 +70,41 @@ echo "Done."
 Echo "Setting up MacPorts update script..."
 cd ..
 if [ ! -e macports_updater.sh ]; then
-	touch macports_updater.sh
-	chown $rtusr:$rtusrgp macports_updater.sh
-	chmod +x macports_updater.sh
-	echo "#! /bin/sh" > macports_updater.sh
-	echo >> macports_updater.sh
-	echo "# macports_updater.sh" >> macports_updater.sh
-	echo "# Hoyt Harness, 2021" >> macports_updater.sh
-	echo "#" >> macports_updater.sh
-	echo "# A shell script for macOS to update an existing MacPorts installation," >> macports_updater.sh
-	echo "# including ports." >> macports_updater.sh
-	echo "#" >> macports_updater.sh
-	echo "# Copyright (C) 2021 Hoyt Harness, hoyt.harness@gmail.com, Positronikal" >> macports_updater.sh
-	echo "#" >> macports_updater.sh
-	echo "# This program is free software: you can redistribute it and/or modify" >> macports_updater.sh
-	echo "# it under the terms of the GNU General Public License as published by" >> macports_updater.sh
-	echo "# the Free Software Foundation, either version 3 of the License, or" >> macports_updater.sh
-	echo "# (at your option) any later version." >> macports_updater.sh
-	echo "#" >> macports_updater.sh
-	echo "# This program is distributed in the hope that it will be useful," >> macports_updater.sh
-	echo "# but WITHOUT ANY WARRANTY; without even the implied warranty of" >> macports_updater.sh
-	echo "# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the" >> macports_updater.sh
-	echo "# GNU General Public License for more details." >> macports_updater.sh
-	echo "#" >> macports_updater.sh
-	echo "# You should have received a copy of the GNU General Public License" >> macports_updater.sh
-	echo "# along with this program.  If not, see <http://www.gnu.org/licenses/>." >> macports_updater.sh
-	echo >> macports_updater.sh >> macports_updater.sh
-	echo "sudo port -v selfupdate" >> macports_updater.sh
-	echo "sudo port upgrade outdated" >> macports_updater.sh
-	echo >> macports_updater.sh
-	echo "exit" >> macports_updater.sh
-	echo "MacPorts update script created. Run macports_updater.sh as root from terminal."
+    touch macports_updater.sh
+    chown $rtusr:$rtusrgp macports_updater.sh
+    chmod +x macports_updater.sh
+    echo "#! /bin/sh" > macports_updater.sh
+    echo >> macports_updater.sh
+    echo "# macports_updater.sh" >> macports_updater.sh
+    echo "# Hoyt Harness, 2021" >> macports_updater.sh
+    echo "#" >> macports_updater.sh
+    echo "# A shell script for macOS to update an existing MacPorts installation," >> macports_updater.sh
+    echo "# including ports." >> macports_updater.sh
+    echo "#" >> macports_updater.sh
+    echo "# Copyright (C) 2021 Hoyt Harness, hoyt.harness@gmail.com, Positronikal" >> macports_updater.sh
+    echo "#" >> macports_updater.sh
+    echo "# This program is free software: you can redistribute it and/or modify" >> macports_updater.sh
+    echo "# it under the terms of the GNU General Public License as published by" >> macports_updater.sh
+    echo "# the Free Software Foundation, either version 3 of the License, or" >> macports_updater.sh
+    echo "# (at your option) any later version." >> macports_updater.sh
+    echo "#" >> macports_updater.sh
+    echo "# This program is distributed in the hope that it will be useful," >> macports_updater.sh
+    echo "# but WITHOUT ANY WARRANTY; without even the implied warranty of" >> macports_updater.sh
+    echo "# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the" >> macports_updater.sh
+    echo "# GNU General Public License for more details." >> macports_updater.sh
+    echo "#" >> macports_updater.sh
+    echo "# You should have received a copy of the GNU General Public License" >> macports_updater.sh
+    echo "# along with this program.  If not, see <http://www.gnu.org/licenses/>." >> macports_updater.sh
+    echo >> macports_updater.sh >> macports_updater.sh
+    echo "sudo port -v selfupdate" >> macports_updater.sh
+    echo "sudo port upgrade outdated" >> macports_updater.sh
+    echo >> macports_updater.sh
+    echo "exit" >> macports_updater.sh
+    echo "sudo port uninstall inactive" >> macports_updater.sh
+    echo "sudo port uninstall rleaves" >> macports_updater.sh
+    echo "MacPorts update script created. Run macports_updater.sh as root from terminal."
 else
-	echo "MacPorts update script already exists. Run macports_updater.sh as root from terminal."
+    echo "MacPorts update script already exists. Run macports_updater.sh as root from terminal."
 fi
 
 read -p "Press any key to exit..."
