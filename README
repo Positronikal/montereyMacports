@@ -1,34 +1,8 @@
 montereyMacports
 
-See the file VERSION in this directory for version information.
+This repository has been deprecated and will be removed in the future.
 
-These shell utilities work on Macintosh macOS 12 Monterey to either
-automate the installation of MacPorts or upgrade MacPorts if an
-installation for an earlier version of macOS exists. Both utilities
-must be ran via sudo and will create a ~/bin/MacPorts directory to
-work from. In addition, they install a third utility in ~/bin to
-automate MacPorts updating (macports_updater.sh). The updater also must
-be ran via root. The install/upgrade utilities add ~/bin to your
-path envar, so updater can simply be called from a terminal using:
+Instead, see https://github.com/Positronikal/macportsAssistant.
 
-$ sudo macports_updater.sh
-
-Both the install/update utilities can be further improved by combining
-them into a single script that determines at runtime if MacPorts is (1)
-installed and already the current version, (2) is installed, but not
-the current version, or (3) is not installed, then calling the
-appropriate functionality from there. Contributors/testers may find
-other areas of improvement.
-
-If this is a beta release, you may find that the program is unfinished.
-Even if it is a maintenance release, you may encounter bugs. Please see
-BUGS in this directory. If you do, please report them. Your bug reports
-are valuable contributions to Positronikal since they allow us to
-notice and fix problems on machines we don't have or in code we don't
-use often.  See the file BUGS in this directory for more information on
-how to report bugs.
-
-Licensing information is contained in the file COPYING in this directory.
-
-Hoyt Harness/Positronikal 2017
+Hoyt Harness/Positronikal 2023
 hoyt.harness@gmail.com
